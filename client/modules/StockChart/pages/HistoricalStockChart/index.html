@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>axaxa</title>
+	</head>
+	<body><div id="container"></div>
+		xaxaxaxaxa
+		<script type="text/javascript" src="../../../../../node_modules/anychart/dist/js/anychart-bundle.min.js"></script>
+<script>
+anychart.onDocumentReady(function () {
+
+  data = [];
+  for (var y = 1900; y < 2018; ++y) {
+    for (var m = 1; m < 9; ++m) {
+      for (var d = 1; d < 29; ++d) {
+        data.push([y + '-' + m + '-' + d, 90 + Math.random() * 10, 90 + Math.random() * 10, 90 + Math.random() * 10, 90 + Math.random() * 10])
+      }
+    }
+  }
+  
+  console.log(data.length);
+  
+    // set the data
+    table = anychart.data.table();
+    table.addData(data);
+  
+    // map the data
+    mapping = table.mapAs();
+    mapping.addField('open', 1);
+    mapping.addField('high', 2);
+    mapping.addField('low', 3);
+    mapping.addField('close', 4);
+
+    // chart type
+    var chart = anychart.stock();
+
+    // set the series
+    var series = chart.plot(0).line().data(table.mapAs({'value': 1}));
+    series.name("ACME Corp. stock prices");
+
+    chart.title('Stock Candlestick Demo: ACME Corp. Stock prices \n(Array data notation)');
+    chart.container('container');
+
+    chart.draw();
+});</script>
+	</body>
+</html>

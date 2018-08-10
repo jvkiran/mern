@@ -105,6 +105,10 @@ const renderFullPage = (html, initialState) => {
         </script>
         <script src='${isProdMode ? assetsManifest['/vendor.js'] : '/vendor.js'}'></script>
         <script src='${isProdMode ? assetsManifest['/app.js'] : '/app.js'}'></script>
+        <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-stock.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
       </body>
     </html>
   `;
